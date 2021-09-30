@@ -5,13 +5,22 @@ excerpt: docker-compose.yml fields supported by {{ $names.company.lower }}
 
 # docker-compose.yml fields
 
-Our compose-file support is currently based on [version 2.2](https://docs.docker.com/compose/compose-file/compose-versioning/#version-22), as such any fields that depend on version >=2.3 are not supported.
+Our compose-file support is currently based on [version 2.4](https://docs.docker.com/compose/compose-file/compose-versioning/#version-22), as such any fields that were introduced in version 3 are not supported.
 
 ## Supported fields
 
 Field | Details
 --- | ---
-[build](https://docs.docker.com/compose/compose-file/compose-file-v2/#build) | `build` or `context` paths must point to project/app subfolders. URLs to git repositories are not currently supported.
+[build](https://docs.docker.com/compose/compose-file/compose-file-v2/#build) | when using a path it must point to project/app subfolders. URLs to git repositories are not currently supported.
+[build.context](https://docs.docker.com/compose/compose-file/compose-file-v2/#context) | must point to project/app subfolders. URLs to git repositories are not currently supported.
+[build.dockerfile](https://docs.docker.com/compose/compose-file/compose-file-v2/#dockerfile) |
+[build.args](https://docs.docker.com/compose/compose-file/compose-file-v2/#args) |
+[build.cache_from](https://docs.docker.com/compose/compose-file/compose-file-v2/#cache_from) |
+[build.extra_hosts](https://docs.docker.com/compose/compose-file/compose-file-v2/#extra_hosts) |
+[build.labels](https://docs.docker.com/compose/compose-file/compose-file-v2/#labels) |
+[build.network](https://docs.docker.com/compose/compose-file/compose-file-v2/#network) |
+[build.shm_size](https://docs.docker.com/compose/compose-file/compose-file-v2/#shm_size) |
+[build.target](https://docs.docker.com/compose/compose-file/compose-file-v2/#target) |
 [cap_add](https://docs.docker.com/compose/compose-file/compose-file-v2/#cap_add-cap_drop) |
 [cap_drop](https://docs.docker.com/compose/compose-file/compose-file-v2/#cap_add-cap_drop) |
 [cgroup_parent](https://docs.docker.com/compose/compose-file/compose-file-v2/#cgroup_parent) |
@@ -65,6 +74,7 @@ Field | Details
 
 Field | Details
 --- | ---
+[build.isolation](https://docs.docker.com/compose/compose-file/compose-file-v2/#isolation) |
 [blkio_config](https://docs.docker.com/compose/compose-file/compose-file-v2/#blkio_config) |
 [container_name](https://docs.docker.com/compose/compose-file/compose-file-v2/#container_name) | Used by the device supervisor
 [cpu_count](https://docs.docker.com/compose/compose-file/compose-file-v2/#cpu-and-other-resources) |
